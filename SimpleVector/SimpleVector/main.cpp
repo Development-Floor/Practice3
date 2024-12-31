@@ -6,7 +6,7 @@ using namespace std;
 int main() {
 	SimpleVector<int> simpleVector;
 
-	cout << " ----- °ª ³Ö±â Àü simpleVector -----" << endl;
+	cout << " ----- ê°’ ë„£ê¸° ì „ simpleVector -----" << endl;
 	cout << "simpleVector.size()    : " << simpleVector.size() << endl;
 	cout << "simpleVector.capacity(): " << simpleVector.capacity() << endl;
 
@@ -14,7 +14,7 @@ int main() {
 		simpleVector.push_back(i);
 	}
 
-	cout << "\n --- push_back() ÈÄ simpleVector ---" << endl;
+	cout << "\n --- push_back() í›„ simpleVector ---" << endl;
 	cout << "simpleVector.size()    : " << simpleVector.size() << endl;
 	cout << "simpleVector.capacity(): " << simpleVector.capacity() << endl;
 
@@ -22,7 +22,7 @@ int main() {
 		simpleVector.pop_back();
 	}
 
-	cout << "\n --- pop_back()  ÈÄ simpleVector ---" << endl;
+	cout << "\n --- pop_back()  í›„ simpleVector ---" << endl;
 	cout << "simpleVector.size()    : " << simpleVector.size() << endl;
 	cout << "simpleVector.capacity(): " << simpleVector.capacity() << endl;
 
