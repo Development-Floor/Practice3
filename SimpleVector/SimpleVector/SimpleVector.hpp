@@ -36,7 +36,9 @@ void SimpleVector<T>::push_back(const T& value) {
 
 template<typename T>
 void SimpleVector<T>::pop_back() {
-	currentSize--;
+	if (currentSize > 0) {
+		currentSize--;
+	}
 }
 
 template<typename T>
