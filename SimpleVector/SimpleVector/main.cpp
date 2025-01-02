@@ -28,8 +28,8 @@ int main() {
 
 	// ------- 여기부터 과제2 실행
 
-	cout << "\n --- °úÁ¦ 2 ---\n" << endl;
-	cout << "¾Æ·¡ºÎÅÍ´Â simpleVector¸¦ º¹»çÇÑ copySimpleVector¸¦ »ç¿ëÇÕ´Ï´Ù.\n" << endl;
+	cout << "\n --- 과제 2 ---\n" << endl;
+	cout << "아래부터는 simpleVector를 복사한 copySimpleVector를 사용합니다.\n" << endl;
 
 	// 복사 생성자
 	SimpleVector<int> copySimpleVector(simpleVector);
@@ -38,7 +38,7 @@ int main() {
 		copySimpleVector.push_back(i * 10);
 	}
 
-	cout << "copySimpleVector¿¡ µé¾îÀÖ´Â °ª" << endl;
+	cout << "copySimpleVector에 들어있는 값" << endl;
 
 	for (int i = 0; i < copySimpleVector.size(); i++) {
 		cout << copySimpleVector[i] << " ";
@@ -58,7 +58,7 @@ int main() {
 	cout << "\n" << endl;
 
 	// SimpleVector 클래스의 크기 변화 push_back, resize
-	cout << "copySimpleVectorÀÇ Å©±â¿Í ÃÖ´ë Å©±â¿Í ¿ø¼Ò" << endl;
+	cout << "copySimpleVector의 크기와 최대 크기와 원소" << endl;
 
 	cout << "size: " << copySimpleVector.size() << ", capacity: " << copySimpleVector.capacity() << endl;
 
@@ -72,7 +72,7 @@ int main() {
 		copySimpleVector.push_back(i + 1);
 	}
 
-	cout << "copySimpleVector¿¡ °ª 1, 2, 3 Ãß°¡\n" << endl;
+	cout << "copySimpleVector¿¡ °ª 1, 2, 3 추가\n" << endl;
 
 	cout << "size: " << copySimpleVector.size() << ", capacity: " << copySimpleVector.capacity() << endl;
 
@@ -82,17 +82,17 @@ int main() {
 
 	cout << "\n" << endl;
 
-	cout << "resize ½ÇÇà\n" << endl;
+	cout << "resize 실행\n" << endl;
 
 	copySimpleVector.resize(5);
 
-	cout << "ÇöÀç capacityº¸´Ù ÀÛÀº °æ¿ì : copySimpleVector.resize(5)" << endl;
+	cout << "현재 capacity보다 작은 경우 : copySimpleVector.resize(5)" << endl;
 
 	cout << copySimpleVector.size() << " " << copySimpleVector.capacity() << "\n" << endl;
 
 	copySimpleVector.resize(20);
 
-	cout << "ÇöÀç capacityº¸´Ù Å«  °æ¿ì : copySimpleVector.resize(20)" << endl;
+	cout << "현재 capacity보다 큰  경우 : copySimpleVector.resize(20)" << endl;
 
 	cout << copySimpleVector.size() << " " << copySimpleVector.capacity() << "\n" << endl;
 
