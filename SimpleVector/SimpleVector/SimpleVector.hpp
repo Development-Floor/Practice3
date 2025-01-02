@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 
 template <typename T>
 class SimpleVector {
@@ -11,8 +12,9 @@ public:
 	~SimpleVector();
 	void push_back(const T& value);
 	void pop_back();
-	int size();
-	int capacity();
+	void resize(int newCapacity);
+	int size() const;
+	int capacity() const;
 };
 
 template<typename T>
@@ -22,6 +24,7 @@ SimpleVector<T>::SimpleVector(int capacity) {
 	data = new T[capacity];
 }
 
+
 template<typename T>
 SimpleVector<T>::~SimpleVector() {
 	delete[] data;
@@ -29,22 +32,43 @@ SimpleVector<T>::~SimpleVector() {
 
 template<typename T>
 void SimpleVector<T>::push_back(const T& value) {
-	if (currentSize < currentCapacity) {
-		data[currentSize++];
+	if (currentSize >= currentCapacity) {
+		resize(currentCapacity + 5);
 	}
+
+	data[currentSize++] = value;
 }
 
 template<typename T>
 void SimpleVector<T>::pop_back() {
-	currentSize--;
+	if (currentSize > 0) {
+		currentSize--;
+	}
 }
 
 template<typename T>
-int SimpleVector<T>::size() {
+void SimpleVector<T>::resize(int newCapacity) {
+	if (newCapacity <= currentCapacity) {
+		return;
+	}
+
+	currentCapacity = newCapacity;
+
+	T* newData = new T[currentCapacity];
+
+	std::copy(data, data + currentSize, newData);
+
+	delete[] data;
+
+	data = newData;
+}
+
+template<typename T>
+int SimpleVector<T>::size() const {
 	return currentSize;
 }
 
 template<typename T>
-int SimpleVector<T>::capacity() {
+int SimpleVector<T>::capacity() const {
 	return currentCapacity;
 }
