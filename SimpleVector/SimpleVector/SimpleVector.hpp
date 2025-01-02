@@ -14,6 +14,7 @@ public:
 	void push_back(const T& value);
 	void pop_back();
 	void resize(int newCapacity);
+	void sortData();
 	int size() const;
 	int capacity() const;
 };
@@ -69,6 +70,11 @@ void SimpleVector<T>::resize(int newCapacity) {
 	delete[] data;
 
 	data = newData;
+}
+
+template<typename T>
+void SimpleVector<T>::sortData() {
+	sort(data, data + currentSize);
 }
 
 template<typename T>
