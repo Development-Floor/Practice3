@@ -9,6 +9,7 @@ class SimpleVector {
 
 public:
 	SimpleVector(int capacity = 10);
+	SimpleVector(const SimpleVector<T>& other);
 	~SimpleVector();
 	void push_back(const T& value);
 	void pop_back();
@@ -24,6 +25,13 @@ SimpleVector<T>::SimpleVector(int capacity) {
 	data = new T[capacity];
 }
 
+template<typename T>
+SimpleVector<T>::SimpleVector(const SimpleVector<T>& other) {
+	currentCapacity = other.capacity();
+	currentSize = other.currentSize;
+	data = new T[currentCapacity];
+	std::copy(other.data, other.data + other.currentSize, data);
+}
 
 template<typename T>
 SimpleVector<T>::~SimpleVector() {
