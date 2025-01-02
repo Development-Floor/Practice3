@@ -17,6 +17,10 @@ public:
 	void sortData();
 	int size() const;
 	int capacity() const;
+
+	// °úÁ¦x
+	// data indexing
+	T& operator[] (int index);
 };
 
 template<typename T>
@@ -85,4 +89,11 @@ int SimpleVector<T>::size() const {
 template<typename T>
 int SimpleVector<T>::capacity() const {
 	return currentCapacity;
+}
+
+template<typename T>
+T& SimpleVector<T>::operator[] (int index) {
+	if (index >= 0 && index < currentSize) {
+		return data[index];
+	}
 }
