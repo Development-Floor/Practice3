@@ -18,7 +18,7 @@ public:
 	int size() const;
 	int capacity() const;
 
-	// ����x
+	// 과제x
 	// data indexing
 	T& operator[] (int index);
 };
