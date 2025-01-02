@@ -18,7 +18,7 @@ public:
 	int size() const;
 	int capacity() const;
 
-	// °úÁ¦x
+	// ï¿½ï¿½ï¿½ï¿½x
 	// data indexing
 	T& operator[] (int index);
 };
